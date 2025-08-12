@@ -1,4 +1,4 @@
-(ns sicp-clj.chapter1.sqrt)
+(ns sicp-clj.ch-1.sqrt)
 
 (defn average [x y]
   (/ (+ x y) 2))

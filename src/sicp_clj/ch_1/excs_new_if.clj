@@ -1,5 +1,5 @@
-(ns sicp-clj.chapter1.excs-new-if
-  (:require [sicp-clj.chapter1.sqrt :refer [good-enough? improve]]))
+(ns sicp-clj.ch-1.excs-new-if
+  (:require [sicp-clj.ch-1.sqrt :refer [good-enough? improve]]))
 
 (defn new-if [predicate then-clause else-clause]
   (cond

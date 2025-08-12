@@ -1,1 +1,0 @@
-(ns sicp-clj.chapter1.exec-new-good-enough)
