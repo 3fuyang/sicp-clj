@@ -5,13 +5,12 @@
 (defn simpson-integral "n must be even" [f a b n] 
   (defn simpson-add [h]
     (defn simpson-unit [k]
-      ;; how to abstract (f (+ a (* k h)))
-      (cond
-        (or (= 0 k)
-            (= n k)) (f (+ a (* k h)))
-        (even? k) (* 2 (f (+ a (* k h))))
-        :else (* 4 (f (+ a (* k h))))))
-    (sum/sum simpson-unit 0 inc n))
+      (let [y (f (+ a (* k h)))]
+        (cond
+          (or (= 0 k) (= n k)) y
+          (even? k) (* 2 y)
+          :else (* 4 y))))
+      (sum/sum simpson-unit 0 inc n))
   (defn start [h]
     (* (/ h 3.0) (simpson-add h)))
   (start (/ (- b a) n)))
