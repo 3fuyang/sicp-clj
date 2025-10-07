@@ -5,8 +5,8 @@
     (cond (= m 0) x
           (= m 1) y)))
 
-(defn car [z]
+(defn car "selector" [z]
   (z 0))
 
-(defn cdr [z]
+(defn cdr "selector" [z]
   (z 1))
