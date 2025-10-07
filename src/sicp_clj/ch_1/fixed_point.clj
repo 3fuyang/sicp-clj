@@ -1,4 +1,5 @@
-(ns sicp-clj.ch-1.fixed-point)
+(ns sicp-clj.ch-1.fixed-point
+  (:require [sicp-clj.ch-1.sqrt :refer [average]]))
 (require '[clojure.math :as math])
 
 (def tolerance 0.00001)
