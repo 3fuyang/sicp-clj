@@ -7,7 +7,15 @@
         :else (cons (scale-tree (car tree) factor)
                     (scale-tree (cdr tree) factor))))
 
+(defn scale-tree-map [tree factor]
+  (map (fn [sub-tree]
+         (if (list? sub-tree)
+           (scale-tree-map sub-tree factor)
+           (* sub-tree factor)))
+       tree))
+
 (def x (list 1
              (list 2 (list 3 4) 5)
              (list 6 7)))
 (println (scale-tree x 10))
+(println (scale-tree-map x 10))
