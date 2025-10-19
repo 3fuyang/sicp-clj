@@ -1,7 +1,7 @@
 (ns sicp-clj.ch-2.list)
 
 (def one-through-four (list 1 2 3 4))
-(println one-through-four)
+;; (println one-through-four)
 
 (defn car [items]
   (first items))

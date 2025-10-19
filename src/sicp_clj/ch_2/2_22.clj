@@ -18,13 +18,13 @@
 ;; (iter '(3 4) '(4 1))
 ;; ...
 
-(defn square-list-1 [items]
+(defn square-list-1 "intentional wrong syntax" [items]
   (defn iter [things answer]
     (if (empty? things)
-     answer
-     (iter (cdr things)
-           (cons answer
-                 ;; it's not even a list!
-                 (square
-                  (car things))))))
+      answer
+      (iter (cdr things)
+            (cons answer
+                  ;; it's not even a list!
+                  (square
+                   (car things))))))
   (iter items nil))
