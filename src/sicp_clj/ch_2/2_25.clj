@@ -1,12 +1,12 @@
 (ns sicp-clj.ch-2.2-25
-  (:require [sicp-clj.ch-2.list :refer [car, cdr]]))
+  (:require [sicp-clj.ch-2.list :refer [car, cdr, cadr]]))
 
 ;; (1 3 (5 7) 9)
 (def t1 "I write, I pick"
   (list 1 3 (list 5 7) 9))
 
 (defn pick-7-1 [x]
-  (car (cdr (car (cdr (cdr x))))))
+  (cadr (cadr (cdr x))))
 
 ;; ((7))
 (def t2
@@ -25,9 +25,7 @@
                                                (list 6 7)))))))
 
 (defn pick-7-3 [x]
-  (defn unwrap [l]
-    (car (cdr l)))
-  (unwrap (unwrap (unwrap (unwrap (unwrap (unwrap x)))))))
+  (cadr (cadr (cadr (cadr (cadr x))))))
 
 (println (pick-7-1 t1))
 (println (pick-7-2 t2))

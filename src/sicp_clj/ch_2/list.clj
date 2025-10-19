@@ -9,6 +9,9 @@
 (defn cdr [items]
   (rest items))
 
+(defn cadr [items]
+  (car (cdr items)))
+
 (def squares (list 1 4 9 16 25))
 (def odds (list 1 3 5 7 9))
 
