@@ -1,6 +1,16 @@
 (ns sicp-clj.ch-2.accumulate
   (:require [sicp-clj.ch-2.list :refer [car, cdr]]))
 
+;; function accumulate (op, init, seq) {
+;;   if (empty(seq)) {
+;;     return init
+;;   }
+;;
+;;   return op(
+;;     car(seq),
+;;     accumulate(op, init, cdr(seq))
+;;   )
+;; }
 (defn accumulate [op init seq]
   (if (empty? seq) init
       (op (car seq)
